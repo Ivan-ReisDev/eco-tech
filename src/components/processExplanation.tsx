@@ -1,6 +1,6 @@
 export default function ProcessExplanation() {
     return (
-      <div className="flex flex-col items-center justify-center h-[calc(100vh-76px)] px-4 py-10">
+      <div id="Process" className=" flex flex-col items-center justify-center h-[calc(100vh-76px)] px-4 py-10">
         {/* Texto explicativo sobre o processo de coleta */}
         <div className="text-center md:text-left md:w-2/3">
           <h2 className="text-4xl font-bold text-[#0a4a4a] mb-6">

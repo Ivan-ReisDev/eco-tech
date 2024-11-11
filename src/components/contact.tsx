@@ -16,7 +16,6 @@ const Contact = () => {
     setLoading(true);
     setError(null); // Limpa qualquer erro anterior
 
-    // Validação de CPF
     const isValidCpf = validateCPF(cpf);
     if (!isValidCpf) {
       setError('CPF inválido!');
@@ -25,7 +24,7 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch('/api/submit-form', {
+      const response = await fetch('/api/agendamento', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +38,6 @@ const Contact = () => {
         setError('Erro ao agendar a coleta.');
       }
     } catch (err: unknown) {
-      // Tratamento do erro capturado
       if (err instanceof Error) {
         setError(`Erro ao agendar a coleta: ${err.message}`);
       } else {
@@ -56,7 +54,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center h-[calc(100vh-76px)] px-4 py-10 bg-gradient-to-r from-[#2d6a4f] to-[#447e3f]">
+    <div id="Contact" className="flex flex-col w-full md:flex-row items-center justify-center min-h-screen px-4 py-10 bg-gradient-to-r from-[#2d6a4f] to-[#447e3f]">
       {/* Formulário de Contato */}
       <div className="max-w-screen-lg w-full md:w-1/2 bg-transparent rounded-lg p-8 md:p-12">
         <h2 className="text-3xl font-bold text-white text-center mb-6">Agendamento de Coleta de Lixo Eletrônico</h2>
@@ -72,7 +70,7 @@ const Contact = () => {
               required
             />
           </div>
-
+          {/* Outros campos */}
           <div>
             <label htmlFor="address" className="block text-sm font-medium text-white">Endereço da Coleta</label>
             <input
@@ -136,7 +134,7 @@ const Contact = () => {
             />
           </div>
 
-          {/* Exibição de erro, caso haja algum */}
+          {/* Exibição de erro */}
           {error && <div className="text-red-500 text-sm mt-2">{error}</div>}
 
           <div className="flex justify-center">

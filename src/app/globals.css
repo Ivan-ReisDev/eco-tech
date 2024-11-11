@@ -25,3 +25,12 @@ body {
     text-wrap: balance;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
+
+.anchor-offset {
+  position: relative;
+  top: -76px;
+  visibility: hidden;
+}

@@ -12,7 +12,6 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Image from 'next/image';
 import Logo from './../assets/logo-horizontal.png';
 import Link from 'next/link';
@@ -94,11 +93,31 @@ export default function Navbar({ window }: Props) {
 
           {/* Navegação para desktop */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#259D1C" }}>
-                {item}
-              </Button>
-            ))}
+            
+              <Link 
+              href={"#About"}
+              className='text-[#259D1C] mx-4' >
+                Quem somos
+              </Link>
+
+              <Link 
+              href={"#Accepted"}
+              className='text-[#259D1C] mx-4' >
+                Produtos
+              </Link>
+
+              <Link 
+              href={"#Process"}
+              className='text-[#259D1C] mx-4' >
+                Informações
+              </Link>
+
+              <Link 
+              href={"#Contact"}
+              className='text-[#259D1C] mx-4' >
+                Agendamento
+              </Link>
+      
           </Box>
         </Toolbar>
       </AppBar>
@@ -114,7 +133,7 @@ export default function Navbar({ window }: Props) {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' }, // Só exibe no mobile
+            display: { xs: 'block', sm: 'none' }, 
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
